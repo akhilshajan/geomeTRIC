@@ -1027,8 +1027,8 @@ class QUICK(Engine):
     def __init__(self, molecule, exe=None, threads=None):
         super(QUICK, self).__init__(molecule)
         self.threads = threads
-        if exe.lower() in ("quick", "quick.cuda", "quick.mpi", "quick.cuda.mpi"):
-            self.quick_exe = exe.lower()
+        if exe in ("quick", "quick.cuda", "quick.MPI", "quick.cuda.MPI"):
+            self.quick_exe = exe
         else:
             raise ValueError("Only quick.cuda and quick are supported.")
 
